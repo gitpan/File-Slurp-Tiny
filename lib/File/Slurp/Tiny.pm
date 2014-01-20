@@ -1,13 +1,12 @@
 package File::Slurp::Tiny;
-{
-  $File::Slurp::Tiny::VERSION = '0.002';
-}
+$File::Slurp::Tiny::VERSION = '0.003';
 use strict;
 use warnings;
 
 use Carp 'croak';
 use Exporter 5.57 'import';
 use File::Spec::Functions 'catfile';
+use FileHandle;
 our @EXPORT_OK = qw/read_file read_lines write_file read_dir/;
 
 my $default_layer = $^O eq 'MSWin32' ? ':crlf' : ':unix';
@@ -83,7 +82,7 @@ File::Slurp::Tiny - A simple, sane and efficient file slurper
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 SYNOPSIS
 
